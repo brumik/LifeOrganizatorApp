@@ -107,7 +107,7 @@ const AddEditExpenseScreen: FunctionComponent<Record<string, never>> = () => {
         <Button
           icon={{
             name: 'checkmark-circle',
-            type: 'ionicon',
+            type: 'ionicons',
             color: 'white',
           }}
           title="Save"

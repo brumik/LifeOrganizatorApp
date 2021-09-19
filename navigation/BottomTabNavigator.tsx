@@ -10,7 +10,14 @@ import React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import { DocumentsScreen } from '../screens/DocumentsScreen/';
+import {
+  AddEditDocumentScreen,
+  AddEditProjectScreen,
+  DocumentsArchiveScreen,
+  DocumentScreen,
+  DocumentsScreen,
+  ProjectScreen,
+} from '../screens/DocumentsScreen/';
 import {
   FinanceScreen,
   EditIncomeScreen,
@@ -90,6 +97,31 @@ function DocumentsNavigator() {
         name="DocumentsScreen"
         component={DocumentsScreen}
         options={{ headerTitle: 'Documents' }}
+      />
+      <DocumentsStack.Screen
+        name="AddEditDocumentScreen"
+        component={AddEditDocumentScreen}
+        options={{ headerTitle: 'Document form' }}
+      />
+      <DocumentsStack.Screen
+        name="AddEditProjectScreen"
+        component={AddEditProjectScreen}
+        options={{ headerTitle: 'Project form' }}
+      />
+      <DocumentsStack.Screen
+        name="DocumentsArchiveScreen"
+        component={DocumentsArchiveScreen}
+        options={{ headerTitle: 'Archive' }}
+      />
+      <DocumentsStack.Screen
+        name="DocumentScreen"
+        component={DocumentScreen}
+        options={{ headerTitle: 'Document' }}
+      />
+      <DocumentsStack.Screen
+        name="ProjectScreen"
+        component={ProjectScreen}
+        options={{ headerTitle: 'Project' }}
       />
     </DocumentsStack.Navigator>
   );

@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FunctionComponent } from 'react';
 import { Card, ListItem, Button } from 'react-native-elements';
-import { FinanceScreenNavigationProp } from '../../types';
+import { FinanceScreenNavigationProp } from '../../../types';
 
 interface Props {
   expenses: {
@@ -21,7 +21,7 @@ const ExpenseCard: FunctionComponent<Props> = ({
       <Button
         icon={{
           name: 'add',
-          type: 'ionicon',
+          type: 'ionicons',
           color: '#fff',
         }}
         title="Add expense"

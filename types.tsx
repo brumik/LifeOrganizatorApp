@@ -25,9 +25,19 @@ export type FinanceParamList = {
 
 export type DocumentsParamList = {
   DocumentsScreen: undefined;
+  DocumentsArchiveScreen: undefined;
+  ProjectScreen: undefined;
+  DocumentScreen: undefined;
+  AddEditProjectScreen: undefined;
+  AddEditDocumentScreen: undefined;
 };
 
 export type FinanceScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<BottomTabParamList, 'Finance'>,
   StackNavigationProp<FinanceParamList>
+>;
+
+export type DocumentsScreenNavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<BottomTabParamList, 'Documents'>,
+  StackNavigationProp<DocumentsParamList>
 >;

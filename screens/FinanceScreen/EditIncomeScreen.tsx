@@ -15,14 +15,14 @@ const EditIcncomeScreen: FunctionComponent<Record<string, never>> = () => {
         <Input
           placeholder="Monthly income"
           value={`${value || ''}`}
-          rightIcon={{ name: 'card', type: 'ionicon' }}
+          rightIcon={{ name: 'card', type: 'ionicons' }}
           keyboardType="numeric"
           onChangeText={(v) => setValue(+v)}
         />
         <Button
           icon={{
             name: 'checkmark-circle',
-            type: 'ionicon',
+            type: 'ionicons',
             color: 'white',
           }}
           title="Save"
