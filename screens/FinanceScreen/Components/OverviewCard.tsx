@@ -49,8 +49,8 @@ const OverviewCard: FunctionComponent<Props> = ({
       <Card.Divider />
       <Button
         icon={{
-          name: 'create',
-          type: 'ionicons',
+          name: 'edit',
+          type: 'font-awesome-5',
           color: '#fff',
         }}
         title="Edit Income"

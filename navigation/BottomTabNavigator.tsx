@@ -1,9 +1,4 @@
-/**
- * Learn more about createBottomTabNavigator:
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
-
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
@@ -49,21 +44,17 @@ export default function BottomTabNavigator() {
         name="Documents"
         component={DocumentsNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="document" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="folder-open" solid color={color} />,
         }}
       />
     </BottomTab.Navigator>
   );
 }
 
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome5>['name']; solid?: boolean; color: string }) {
+  return <FontAwesome5 size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const FinanceStack = createStackNavigator<FinanceParamList>();
 
 function FinanceNavigator() {

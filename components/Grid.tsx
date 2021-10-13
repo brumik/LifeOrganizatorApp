@@ -8,17 +8,22 @@ interface Props {
 }
 
 const calculatePadding = (padding: boolean) => ({
-  padding: padding ? 2 : 0,
+  paddingLeft: padding ? 2 : 0,
 });
 
 const Grid: FunctionComponent<Props> = ({
   cols = 1,
-  padding = true,
+  padding = false,
   children
 }) => (
   <View style={styles.row}>
     {children.map((child, idx) => (
-      <View key={idx} style={{ width: `${100/cols}%`, ...calculatePadding(padding) }}>
+      <View
+        key={idx}
+        style={{
+          width: `${100/cols}%`,
+          ...(idx !== 0 && calculatePadding(padding))
+        }}>
         {child}
       </View>
     ))}

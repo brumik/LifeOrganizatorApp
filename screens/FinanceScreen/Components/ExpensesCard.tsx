@@ -20,8 +20,8 @@ const ExpenseCard: FunctionComponent<Props> = ({
       <Card.Title>Expenses</Card.Title>
       <Button
         icon={{
-          name: 'add',
-          type: 'ionicons',
+          name: 'plus',
+          type: 'font-awesome-5',
           color: '#fff',
         }}
         title="Add expense"

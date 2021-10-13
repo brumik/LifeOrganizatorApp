@@ -1,10 +1,9 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { FunctionComponent } from 'react';
-import { Button } from 'react-native-elements';
+import { Button, FAB } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
-import Grid from '../../components/Grid';
 import { DocumentsScreenNavigationProp } from '../../types';
-import ProjectsListCard from './Components/ProjectsListCard';
+import ProjectsList from './Components/ProjectsList';
 
 import { projects } from './dummyData';
 
@@ -12,31 +11,32 @@ const DocumentsScreen: FunctionComponent<Record<string, never>> = () => {
   const navigation = useNavigation<DocumentsScreenNavigationProp>();
 
   return (
-    <ScrollView>
-      <Grid cols={2}>
-        <Button
-          icon={{
-            name: 'add',
-            type: 'ionicons',
-            color: '#fff',
-          }}
-          title='New project'
-          onPress={() => navigation.navigate('AddEditProjectScreen')}
-        />
+    <>
+      <ScrollView>
         <Button
           icon={{
             name: 'archive',
-            type: 'ionicons',
+            type: 'font-awesome-5',
             color: '#fff',
           }}
-          title='Archive'
+          title='Go to Archive'
           onPress={() => navigation.navigate('DocumentsArchiveScreen')}
         />
-      </Grid>
-      <ProjectsListCard
-        projects={projects}
+        <ProjectsList
+          projects={projects}
+        />
+      </ScrollView>
+      <FAB 
+        icon={{
+          name: 'plus',
+          type: 'font-awesome-5',
+          color: '#fff',
+        }}
+        title='New project'
+        onPress={() => navigation.navigate('AddEditProjectScreen')}
+        placement="right"
       />
-    </ScrollView>
+    </>
   );
 };
 
