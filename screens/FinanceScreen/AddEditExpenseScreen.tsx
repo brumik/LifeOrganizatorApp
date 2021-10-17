@@ -4,6 +4,7 @@ import { ScrollView } from "react-native";
 import { Button, Card, Input } from "react-native-elements";
 import Picker from '../../components/Picker';
 import { FinanceScreenNavigationProp } from "../../types";
+import getIconProps from "../../components/getIconProps";
 
 const frequency: Record<string, string> = {
   daily: "Daily",
@@ -105,11 +106,7 @@ const AddEditExpenseScreen: FunctionComponent<Record<string, never>> = () => {
           })}
         />
         <Button
-          icon={{
-            name: 'checkmark-circle',
-            type: 'font-awesome-5',
-            color: 'white',
-          }}
+          icon={getIconProps({ name: 'check-circle' })}
           title="Save"
           onPress={() => navigation.goBack()}
         />

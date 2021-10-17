@@ -3,6 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { Button, Card, Input } from "react-native-elements";
 import { FinanceScreenNavigationProp } from "../../types";
+import getIconProps from "../../components/getIconProps";
 
 const EditIcncomeScreen: FunctionComponent<Record<string, never>> = () => {
   const navigation = useNavigation<FinanceScreenNavigationProp>();
@@ -20,12 +21,7 @@ const EditIcncomeScreen: FunctionComponent<Record<string, never>> = () => {
           onChangeText={(v) => setValue(+v)}
         />
         <Button
-          icon={{
-            name: 'check-circle',
-            solid: true,
-            type: 'font-awesome-5',
-            color: 'white',
-          }}
+          icon={getIconProps({ name: 'check-circle' })}
           title="Save"
           onPress={() => navigation.navigate('FinanceScreen')}
         />

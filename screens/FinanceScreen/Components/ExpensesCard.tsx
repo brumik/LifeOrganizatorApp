@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FunctionComponent } from 'react';
 import { Card, ListItem, Button } from 'react-native-elements';
+import getIconProps from '../../../components/getIconProps';
 import { FinanceScreenNavigationProp } from '../../../types';
 
 interface Props {
@@ -19,11 +20,7 @@ const ExpenseCard: FunctionComponent<Props> = ({
     <Card>
       <Card.Title>Expenses</Card.Title>
       <Button
-        icon={{
-          name: 'plus',
-          type: 'font-awesome-5',
-          color: '#fff',
-        }}
+        icon={getIconProps({ name: 'plus' })}
         title="Add expense"
         onPress={() => navigation.navigate('AddEditExpenseScreen')}
       />

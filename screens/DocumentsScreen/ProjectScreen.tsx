@@ -2,8 +2,10 @@ import React, { FunctionComponent } from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/core';
 import { DocumentsScreenNavigationProp } from '../../types';
-import { Card, Text, FAB } from 'react-native-elements';
+import { Card, Text } from 'react-native-elements';
 import DocumenstList from './Components/DocumentsList';
+import getIconProps from '../../components/getIconProps';
+import SpeedDial from '../../components/SpeedDial';
 
 const ProjectScreen: FunctionComponent<Record<string, never>> = () => {
   const navigation = useNavigation<DocumentsScreenNavigationProp>();
@@ -21,27 +23,19 @@ const ProjectScreen: FunctionComponent<Record<string, never>> = () => {
           { name: 'Three', description: 'This is the three' },
         ]} />
       </ScrollView>
-      <FAB
-        icon={{
-          name: 'angle-double-down',
-          type: 'font-awesome-5',
-          color: '#fff',
-        }}
-        title='Archive'
-        onPress={() => { }}
-        color="grey"
-        placement="left"
-      />
-      <FAB
-        icon={{
-          name: 'plus',
-          type: 'font-awesome-5',
-          color: '#fff',
-        }}
-        title='New file'
-        onPress={() => navigation.navigate('AddEditDocumentScreen')}
-        placement="right"
-      />
+      <SpeedDial>
+        <SpeedDial.Action
+          icon={getIconProps({ name: 'angle-double-down', size: 20, })}
+          title='Archive'
+          onPress={() => { }}
+          color="grey"
+        />
+        <SpeedDial.Action
+          icon={getIconProps({ name: 'plus', size: 20, })}
+          title='New document'
+          onPress={() => navigation.navigate('AddEditDocumentScreen')}
+        />
+      </SpeedDial>
     </>
   );
 };
