@@ -13,7 +13,7 @@ const ProjectScreen: FunctionComponent<Record<string, never>> = () => {
   return (
     <>
       <ScrollView>
-        <Card containerStyle={{ margin: 0, marginBottom: 2}}>
+        <Card containerStyle={{ margin: 0 }}>
           <Card.Title>This is the title</Card.Title>
           <Text>This is the project description.</Text>
         </Card>
