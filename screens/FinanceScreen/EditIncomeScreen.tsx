@@ -16,7 +16,7 @@ const EditIcncomeScreen: FunctionComponent<Record<string, never>> = () => {
         <Input
           placeholder="Monthly income"
           value={`${value || ''}`}
-          rightIcon={{ name: 'coins', type: 'font-awesome-5' }}
+          rightIcon={getIconProps({ name: 'coins' })}
           keyboardType="numeric"
           onChangeText={(v) => setValue(+v)}
         />

@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/core';
 import React, { FunctionComponent } from 'react';
 import { Button, FAB } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
+import getIconProps from '../../components/getIconProps';
 import { DocumentsScreenNavigationProp } from '../../types';
 import ProjectsList from './Components/ProjectsList';
 
@@ -27,11 +28,7 @@ const DocumentsScreen: FunctionComponent<Record<string, never>> = () => {
         />
       </ScrollView>
       <FAB 
-        icon={{
-          name: 'plus',
-          type: 'font-awesome-5',
-          color: '#fff',
-        }}
+        icon={getIconProps({ name: 'plus' })}
         title='New project'
         onPress={() => navigation.navigate('AddEditProjectScreen')}
         placement="right"
